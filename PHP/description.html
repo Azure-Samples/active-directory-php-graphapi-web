@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP Sample App For Windows Azure Active Directory Graph</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>PHP Sample App For Windows Azure Active Directory Graph</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            JSON, REST, Windows Azure, OData, PHP, Graph API, windows azure active directory
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            REST, windows azure active directory, Windows Azure Rest API
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web, Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">12/16/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>Introduction</h1>
+<p><span>This&nbsp;PHP sample application demonstrates how to Read and Write tenant data to Windows Azure Active Directory using the preview of the new Graph API, which is a new RESTful interface that allows programmatic access to tenant data such as users,
+ contacts, groups, roles etc.&nbsp; The Graph API will enable developers to incorporate new capabilities with existing applications and to build new applications that leverage directory data access to Windows Azure AD. You can visit the
+<a href="http://blogs.msdn.com/b/aadgraphteam/" >AAD Graph team blog</a> on MSDN to learn more about the Windows Azure Active Directory Graph Service.&nbsp;If you are actively using AAD Graph Service or have tried it, we would love to hear feedback
+ from you. The team blog is a great place to ask any Graph service related questions and provide us feedback.</span></p>
+<p><span>The PHP sample produces HTTP requests&nbsp;and reads the JSON responses back&nbsp;from the Graph service based on the user action.&nbsp;You can read about the exact format of the&nbsp;HTTP requests and JSON responses from the Graph service
+<a href="http://blogs.msdn.com/b/aadgraphteam/archive/2013/01/15/understanding-azure-active-directory-graph-operations.aspx">
+here</a>. The GraphServiceAccessHelper.php file contains the code for producing all the requests and reading responses from the Graph service.</span></p>
+<p><span>The Graph API is compatible with OData V3 and enables applications to construct more complex queries. The sample application authenticates to Graph API by presenting a token that is issued by Windows Azure Access Control Service using OAuth 2.0. The
+ sample application is authorized to read user information from a demonstration Azure AD company. To execute Write Operations for your company's data (Create, Delete, Update), then you must use your own Azure AD company (sign up for a Windows Azure Company
+ here ) and configure authorization for the app to have both read and write permissions (a PowerShell script is provided with the sample app that will help you configure this authorization).&nbsp;</span></p>
+<h1><span>Building the Sample</span></h1>
+<p><span>You can use <a href="http://www.microsoft.com/web/webmatrix/">WebMatrix</a> to work with this PHP sample. WebMatrix is a free and light weight tool that will let you</span><br>
+<span>create web sites using various technologies like PHP, Asp.Net, Node.js etc. In order to run this sample in Web matrix, choose&nbsp; &quot;Open Site&quot; -&gt; &quot;Folder as Site&quot; and select the folder that contains all the downloaded files.&nbsp;</span></p>
+<p><span style="font-size:x-small">The application is configured and authorized to Read data from a demo company hosted in Windows Azure AD. If you wish to access your own Windows Azure AD tenant or wish to try the Write operations (Create, Delete, Update),
+ then you must have Admin credentials to the tenant, and be able to run PowerShell commandlets to configure a service principal for your Azure AD tenant - a PowerShell Script is provided that will allow a company administrator to configure this service principal.&nbsp;&nbsp;
+ After configuring the service principal, the sample application's web.config file must be&nbsp; updated using property values from creating a Service Principal under your tenant.&nbsp; As mentioned previously, if you don't have Windows Azure AD tenant, then
+ you can sign up for a a standalone Windows Azure AD tenant here or a 30 day Office 365 trial company from
+<a href="http://www.office365.com">www.office365.com</a>.</span></p>
+<p><span style="font-size:20px; font-weight:bold"><span>Description</span></span></p>
+<p>This PHP sample application accesses the Windows Azure Active Directory Graph API, and query a demo tenant's user information. This sample app is configured to Read data from a demo tenant hosted in Azure AD. If you would like to configure the app to Read
+ and Write data, then you must use it against your own Azure AD tenant - you will need to configure a Service Principal for your company and assign to the Company Administrator Role.&nbsp; We've included a PowerShell script that allow you to easily do this
+ for your Windows Azure AD tenant - you will then need to update the sample application's&nbsp;settings.php file with your tenant ID, application service principal ID, and&nbsp;password and rebuild the application.&nbsp; Review the following MSDN topics on
+<a href="http://msdn.microsoft.com/en-us/library/hh974468">how to create a Service Principal</a> and how to
+<a href="http://msdn.microsoft.com/en-us/library/hh974473">assign it to a Role</a> in your own company.</p>
+<p>&nbsp;</p>
+<div><span style="font-size:x-small"><strong>What you can do with the sample application</strong></span></div>
+<ul>
+<li><span style="font-size:x-small">You can use the PS1 script in the downloaded folder&nbsp;to generate a service principal.</span>
+</li><li><span style="font-size:x-small">Read user and group object information</span>
+</li><li><span style="font-size:x-small">Create, Edit and Delete Users and Security&nbsp;Groups</span>
+</li><li><span style="font-size:x-small">See the members of a group and add new users.</span>&nbsp;You can look at the Members of a group by clicking the DisplayName of the Group in the Group Administration page.
+</li></ul>
+<div><span style="font-size:x-small"><strong>&nbsp;</strong></span></div>
+<h1>More Information and Resources</h1>
+<ul>
+<li><span style="font-size:x-small">Microsoft Windows Azure Active Directory Graph API full description:<a href="http://msdn.microsoft.com/en-us/library/hh974476.aspx" >http://msdn.microsoft.com/en-us/library/hh974476.aspx</a></span>
+</li></ul>
+<ul>
+<li>Windows Azure Active Directory Graph Team blog: <a href="http://blogs.msdn.com/b/aadgraphteam/">
+http://blogs.msdn.com/b/aadgraphteam/</a> </li><li><span style="font-size:x-small">Release Notes <a href="http://msdn.microsoft.com/en-us/library/jj149807" >
+http://msdn.microsoft.com/en-us/library/jj149807</a></span> </li><li><span style="font-size:x-small">Graph Explorer:&nbsp; a simple User interface that allows you to query and review results from the Demo company, or your own company:
+<a href="http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb/https://GraphExplorer.CloudApp.net " >https://GraphExplorer.CloudApp.net</a></span>
+</li><li><span style="font-size:x-small">Graph API Differential Queries &ndash;get directory
+</span><span style="font-size:x-small">changes. </span>
+<ul>
+<li><span style="font-size:x-small">Documentation: <a href="http://msdn.microsoft.com/en-us/library/jj836245.aspx" >
+http://msdn.microsoft.com/en-us/library/jj836245.aspx</a></span> </li><li><span style="font-size:x-small">Sample Application: <a href="http://code.msdn.microsoft.com/windowsazure/Sample-App-for-Windows-97eaec90" >
+http://code.msdn.microsoft.com/windowsazure/Sample-App-for-Windows-97eaec90</a></span>
+</li></ul>
+</li></ul>
+<ul>
+<li>
+<div><span style="font-size:x-small">Graph API Metadata endpoint: <a href="http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb/https://Directory.Windows.net/$metadata" >
+https://Graph.Windows.net/Contoso.com/$metadata</a></span></div>
+</li><li>
+<div><span style="font-size:x-small">View Presentations from TechEd June 2012 on the Graph API and Windows Azure Active Directory overview.</span></div>
+<ul>
+<li>
+<div><span style="font-size:x-small">Windows Azure AD Graph API Drill down <a href="http://channel9.msdn.com/events/teched/northamerica/2012/sia322" >
+http://channel9.msdn.com/events/teched/northamerica/2012/sia322</a></span></div>
+</li><li>
+<div><span style="font-size:x-small">A Lap around Windows Azure Active Directory <a href="http://channel9.msdn.com/events/teched/northamerica/2012/sia209" >
+http://channel9.msdn.com/events/teched/northamerica/2012/sia209</a></span></div>
+</li></ul>
+</li></ul>
+
+</div>
+
+
+    </div>
+</body>
+</html>
