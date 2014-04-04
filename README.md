@@ -40,9 +40,10 @@ The sample app is preconfigured to read data from a Demonstration company (Graph
 12. In the Reply URL, add the reply URL address used to return the authorization code returned during Authorization code flow.  For example: "https://localhost:44322/".
 All done!  Before moving on to the next step, you need to find the Client ID of your application, and create an App Key.
 
- 1. While still in the Azure portal, click the Configure tab of your application.
- 2. Find the Client ID value and copy it to the clipboard.
- 3. Add a key - select a key duration of either 1 year or 2 year. When you save this page, the key value will be displayed, copy and save the value in a safe location - you will need this key later to configurate the Client Credentials for this app - this key value will not be displayed again, nor retrievable by any other means, so please record it as soon as it is visible from the Azure Portal.
+1. While still in the Azure portal, click the Configure tab of your application.
+2. Find the Client ID value and copy it to the clipboard.
+3. Add a key - select a key duration of either 1 year or 2 year. When you save this page, the key value will be displayed, copy and  save the value in a safe location - you will need this key later to configurate the Client Credentials for this app - this key value  will not be displayed again, nor retrievable by any other means, so please record it as soon as it is visible from the Azure Portal.
+4. Configure Permissions for your applicaiton - under the "Permissions to other applications" section, select application "Windows  Azure Active Directory" (this is the Graph API), and under the first permission column (Application Permissions), select "Read  Diretory data".  This sampleapp doesn't use delegated permssions, so the Permission under Delegated Permissions are not used.
 
 #### Configuring the PHP sample
 1. Start Webmatrix, and select Open from the main screen, and select Folder, and navigate to the PHP folder of this project.  
