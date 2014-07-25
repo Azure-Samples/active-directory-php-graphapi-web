@@ -18,7 +18,7 @@ From your shell or command line:
 
 `git clone git@github.com:AzureADSamples/WebApp-GraphAPI-PHP.git`
 
-### Step 2:  Run the sample in Visual Studio 2013
+### Step 2:  Run the sample from WebMatrix
 
 The sample app is preconfigured to read data from a Demonstration company (GraphDir1.onMicrosoft.com) in Azure AD. 
 
