@@ -240,7 +240,7 @@
         public static function AddRequiredHeadersAndSettings($ch)
         {
             //Generate the authentication header
-            $authHeader = AuthorizationHelperForAADGraphService::GetAuthenticationHeader(Settings::$appTenantDomainName, Settings::$appPrincipalId, Settings::$password);
+            $authHeader = AuthorizationHelperForAADGraphService::GetAuthenticationHeader(Settings::$appTenantDomainName, Settings::$appPrincipalId, Settings::$clientSecret);
             // Add authorization header, request/response format header( for json) and a header to request content for Update and delete operations.  
             curl_setopt($ch, CURLOPT_HTTPHEADER, array($authHeader,  'Accept:application/json;odata=minimalmetadata',
                                                         'Content-Type:application/json;odata=minimalmetadata', 'Prefer:return-content'));
