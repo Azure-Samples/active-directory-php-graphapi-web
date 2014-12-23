@@ -48,7 +48,7 @@ All done!  Before moving on to the next step, you need to find the Client ID of 
 #### Configuring the PHP sample
 1. Start Webmatrix, and select Open from the main screen, and select Folder, and navigate to the PHP folder of this project.  
 2. Webmatrix will initialize the application 
-3. Open the Settings.php file.  update the $appTenantDomainName to be your tenant identifier (any verified domain owned by the tenant, e.g. Contoso.onMicrosoft.com, contoso.com etc.).  update $appPrincipalId to the the Client ID recorded from previous step in the Azure Managment portal.  Update $password with the key value configured in the previous step in the Azure Management Portal. Save changes.
+3. Open the Settings.php file.  update the $appTenantDomainName to be your tenant identifier (any verified domain owned by the tenant, e.g. Contoso.onMicrosoft.com, contoso.com etc.).  update $appPrincipalId to the the Client ID recorded from previous step in the Azure Managment portal.  Update $clientSecret with the key value configured in the previous step in the Azure Management Portal. Save changes.
 4. Select Run, and try accessing Users, Groups and trying the differential query features.
 
 ## About The Code
