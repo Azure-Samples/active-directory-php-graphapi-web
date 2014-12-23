@@ -6,7 +6,7 @@ class AuthorizationHelperForAADGraphService
     // Post the token generated from the symettric key and other information to STS URL and construct the authentication header
     public static function getAuthenticationHeader($appTenantDomainName, $appPrincipalId, $password){
         // Password
-        $clientSecret = urlencode(settings::$password);
+        $clientSecret = urlencode(settings::$clientSecret);
         // Information about the resource we need access for which in this case is graph.
         $graphId = 'https://graph.windows.net';
         $protectedResourceHostName = 'graph.windows.net';
