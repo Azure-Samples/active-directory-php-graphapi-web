@@ -4,7 +4,7 @@ platforms:
 author: azure
 ---
 
-WebApp-GraphAPI-PHP
+Calling the Azure AD Graph API from a PHP web app
 ===================
 
 This PHP sample application demonstrates how to query data from Azure Active Directory using the Graph API, a RESTful interface that allows programmatic access to tenant data such as users, contacts, groups, roles etc. This application uses OAuth 2.0 Client Credentials to authenticate and get authorization to the Graph API.
