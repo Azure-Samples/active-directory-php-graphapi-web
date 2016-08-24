@@ -21,7 +21,7 @@ class AuthorizationHelperForAADGraphService
         //Using curl to post the information to STS and get back the authentication response    
         $ch = curl_init();
         // set url 
-        $stsUrl = 'https://login.windows.net/'.$appTenantDomainName.'/oauth2/token?api-version=1.0';        
+        $stsUrl = 'https://login.windows.net/'.$appTenantDomainName.'/oauth2/token?'.Settings::$apiVersion;        
         curl_setopt($ch, CURLOPT_URL, $stsUrl); 
         // Get the response back as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
