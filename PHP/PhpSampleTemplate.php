@@ -1,5 +1,5 @@
 <a href="index.php">Home</a> - 
-<a href="aboutthissample.php">About Us</a>
+<a href="AboutThisSample.php">About Us</a>
 <?php 
     //Require other files.
     require_once 'GraphServiceAccessHelper.php';    
