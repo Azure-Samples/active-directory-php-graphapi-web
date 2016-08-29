@@ -59,7 +59,7 @@
                 if(!empty($user->{'odata.error'}))
                 {
                     $message = $user->{'odata.error'}->{'message'};
-                    echo('<p>User creation failed. Service returned error:<b>'.$message->{'value'}. '</b>  Please go back to <a href="createUser.php">Create User</a></p>');
+                    echo('<p>User creation failed. Service returned error:<b>'.$message->{'value'}. '</b>  Please go back to <a href="CreateUser.php">Create User</a></p>');
                 }
                 else {
                     echo('<p>');
