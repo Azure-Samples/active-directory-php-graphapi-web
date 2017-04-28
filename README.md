@@ -1,7 +1,7 @@
 ---
 services: active-directory
 platforms: php
-author: xerners
+author: brandwe
 ---
 
 # Calling the Azure AD Graph API from a PHP web app
